@@ -54,3 +54,4 @@ public class BillItem {
 		return this.amount;
 	}
 }
+
