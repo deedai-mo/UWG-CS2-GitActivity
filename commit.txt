@@ -1,0 +1,49 @@
+commit 68b3932ab48814826cea099b41d1cc31d7d2e478
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:42:02 2025 -0400
+
+     Lab 1 completed
+    Description: all packages created and model and view classes work
+
+commit 45e151d98032be7f04e138aed8c54d2f9f76a37e
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:28:36 2025 -0400
+
+     Adding Lab 1 inital commit'
+    redoing lab 1 cause i did not link it properly the first time
+
+commit 7c9305bcd1fcf82f13e08cf0da1e5e2b8065e70c
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:24:10 2025 -0400
+
+    Lab 1 added to code directory
+
+commit 7e8413caec52592a903ea9faa942ebf833fa3d30
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:20:33 2025 -0400
+
+    Adding starter for Lab 2
+    
+    Added starter project for lab 2 in the code directory.
+
+commit 1ee242020cf98ae022965e9630ee506bfac646fc
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:07:10 2025 -0400
+
+    lab 1
+    
+    lab 1 initial commit
+
+commit 5ae5fb76d17ca1f4c2aa425889384303f157ed00
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:06:15 2025 -0400
+
+    Lab 1
+    
+    lab 1 initial commit
+
+commit b3f4789f354dba95ca638b36c86a18f22525c7a6
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Tue Aug 19 10:04:58 2025 -0400
+
+    Initial commit
