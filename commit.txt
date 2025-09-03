@@ -1,3 +1,17 @@
+commit 39dc61198bcfc185ca04f5210fc70a6a61914b2d
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Tue Sep 2 13:02:25 2025 -0400
+
+     new files from old repo file
+    
+    this is the exception file from class that is moved from old repo file
+
+commit 2f9c9389413e51cce1a20bba73d8fe522f41d515
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:51:05 2025 -0400
+
+     txt file added
+
 commit 68b3932ab48814826cea099b41d1cc31d7d2e478
 Author: deedai-mo <ellamogaha@gmail.com>
 Date:   Thu Aug 28 12:42:02 2025 -0400

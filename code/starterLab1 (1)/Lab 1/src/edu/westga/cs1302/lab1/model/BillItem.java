@@ -32,7 +32,6 @@ public class BillItem {
 	
 
 	/** Return the name for the bill item
-	 * 
 	 * @precondition none
 	 * @postcondition none
 	 * 

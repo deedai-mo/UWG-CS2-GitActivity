@@ -16,8 +16,12 @@ public class BillView {
 	 * @postcondition none
 	 * 
 	 * @return a String containing the list of bill items and total for the bill
+	 * @param bill
 	 */
-	public String getText(Bill bill) {
+	public String getText(Bill bill){
+		if (bill == null) {
+			throw new IllegalArgumentException("bill can not be null");
+		}
 		String text = "ITEMS" + System.lineSeparator();
 		double subTotal = 0.0;
 		for (BillItem item : bill.getItems()) {

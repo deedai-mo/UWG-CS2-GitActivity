@@ -42,5 +42,4 @@ public class BillView {
         return text.toString();
     }
 	
-
 }
