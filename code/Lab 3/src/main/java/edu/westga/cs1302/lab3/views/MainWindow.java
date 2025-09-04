@@ -10,16 +10,20 @@ import javafx.scene.control.TextField;
  * @version Fall 2025
  */
 public class MainWindow {
-	    @FXML
-	    private TextField Input;
 
-	    @FXML
-	    private TextArea output;
+    @FXML
+    private TextField amount;
 
-	    @FXML
-	    void displaytext(ActionEvent event) {
+    @FXML
+    private TextField name;
 
-	    } 
+    @FXML
+    private TextArea output;
+
+    @FXML
+    void addItem(ActionEvent event) {
+
+    }
     /**
      * Perform any needed initialization of UI components and underlying objects.
      */

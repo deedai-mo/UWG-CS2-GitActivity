@@ -1,4 +1,4 @@
-package edu.westga.cs1302.lab3.view;
+package edu.westga.cs1302.lab3.views;
 
 import edu.westga.cs1302.lab3.model.Bill;
 import edu.westga.cs1302.lab3.model.BillItem;
