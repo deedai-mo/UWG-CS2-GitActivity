@@ -15,13 +15,11 @@ public class BillView {
 	 * @precondition none
 	 * @postcondition none
 	 * 
+	 * @param bill the bill to be viewed
+	 * 
 	 * @return a String containing the list of bill items and total for the bill
-	 * @param bill
 	 */
-	public String getText(Bill bill){
-		if (bill == null) {
-			throw new IllegalArgumentException("bill can not be null");
-		}
+	public String getText(Bill bill) {
 		String text = "ITEMS" + System.lineSeparator();
 		double subTotal = 0.0;
 		for (BillItem item : bill.getItems()) {
@@ -33,10 +31,14 @@ public class BillView {
 		text += "SUBTOTAL - $" + subTotal + System.lineSeparator();
 		double tax = subTotal * Bill.TAX_RATE;
 		double tip = subTotal * Bill.TIP_RATE;
-		text += "TAX - $" + tax + System.lineSeparator();
-		text += "TIP - $" + tip + System.lineSeparator();
-		text += "TOTAL - $" + (subTotal + tip + tax);
+		text += "TAX - $" + this.roundToNearestHundredth(tax) + System.lineSeparator();
+		text += "TIP - $" + this.roundToNearestHundredth(tip) + System.lineSeparator();
+		text += "TOTAL - $" + this.roundToNearestHundredth(subTotal + tip + tax);
 		
 		return text;
+	}
+	
+	private double roundToNearestHundredth(double value) {
+		return (int) (value * 100) / 100.0;
 	}
 }
