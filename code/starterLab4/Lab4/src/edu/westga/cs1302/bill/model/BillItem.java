@@ -6,8 +6,8 @@ package edu.westga.cs1302.bill.model;
  * @version Fall 2025
  */
 public class BillItem {
-	private String name;
-	private double amount;
+	private final String name;
+	private final double amount;
 	
 	/** create a new bill item with the provided name and amount
 	 * 
