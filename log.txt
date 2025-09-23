@@ -1,3 +1,27 @@
+commit 0523a42875a4bb1f95f66fd2b69f1ae48e4a9b8e
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Mon Sep 22 22:10:16 2025 -0400
+
+     Stater project
+    
+    this the project scratch
+
+commit f899cfb0e3e4975a2df4e053c19f9c76b8969747
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Mon Sep 22 19:06:35 2025 -0400
+
+    BillCalculator class created
+    
+    this class has been created which calculates the subtotal tax and tip from the Array of Items
+
+commit 970094e95fac5dd206f8c200022d44c07d824336
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Mon Sep 22 15:59:35 2025 -0400
+
+    Inital Lab 4
+    
+    this is the inital lab 4 file before any updates have been made
+
 commit b09597db2ed1ef0dd8dcc694ed8418e6f2a33206
 Author: deedai-mo <ellamogaha@gmail.com>
 Date:   Sun Sep 7 20:36:14 2025 -0400
