@@ -12,7 +12,7 @@ public class BillCalculator {
         checkNotNull(items);
         double subtotal = 0.0;
         for (BillItem item : items) {
-            subtotal += item.getPrice() * item.getQuantity();
+            subtotal += item.getAmount() ;
         }
         return subtotal;
     }

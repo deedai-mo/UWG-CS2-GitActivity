@@ -9,6 +9,7 @@ public class BillItem {
 	private final String name;
 	private final double amount;
 	
+	
 	/** create a new bill item with the provided name and amount
 	 * 
 	 * @precondition name != null &&
@@ -28,6 +29,7 @@ public class BillItem {
 		}
 		this.name = name;
 		this.amount = amount;
+		
 	}
 
 	/** Return the name for the bill item
@@ -51,4 +53,7 @@ public class BillItem {
 	public double getAmount() {
 		return this.amount;
 	}
+	
+
+	
 }
