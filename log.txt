@@ -1,3 +1,17 @@
+commit 78eb54d408511c378226cb402c3df8db5669c082
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Tue Sep 23 23:28:17 2025 -0400
+
+     Task class created
+
+commit aff52affdd64393914e94901637a2003ee73567a
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Tue Sep 23 13:28:25 2025 -0400
+
+     project 1 created
+    
+    Project one created but refuses to commit to branch
+
 commit 0523a42875a4bb1f95f66fd2b69f1ae48e4a9b8e
 Author: deedai-mo <ellamogaha@gmail.com>
 Date:   Mon Sep 22 22:10:16 2025 -0400
