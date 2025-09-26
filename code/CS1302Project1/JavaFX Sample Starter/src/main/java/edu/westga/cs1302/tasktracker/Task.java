@@ -29,14 +29,19 @@ public class Task {
 	public String getPriority() {
 		return this.priority;
 	}
-	
-	public String setDescription(String newDescription) {
-		return this.description;
-	}
+	//public String setDescription(String newDescription) {
+	  //  newDescription = this.description;
+	   // return newDescription;
+	//}
 	@Override 
 	public String toString() {
 		return this.name;
 		
+	}
+
+	public void setDescription(String newDescription) {
+		// TODO Auto-generated method stub
+		newDescription = this.description;
 	}
 
 }
