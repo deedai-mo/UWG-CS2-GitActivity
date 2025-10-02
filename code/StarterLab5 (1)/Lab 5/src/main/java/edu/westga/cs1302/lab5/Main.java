@@ -1,4 +1,4 @@
-package edu.westga.cs1302.tasktracker;
+package edu.westga.cs1302.lab5;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +15,7 @@ import java.io.IOException;
  * @version Fall 2025
  */
 public class Main extends Application {
-  private static final String WINDOW_TITLE = "Task Tracker";
+  private static final String WINDOW_TITLE = "Course Management System";
   private static final String GUI_RESOURCE = "views/MainWindow.fxml";
 
   /**
@@ -26,8 +26,7 @@ public class Main extends Application {
    *
    * @throws IOException
    */
-  @SuppressWarnings("exports")
-@Override
+  @Override
   public void start(Stage primaryStage) throws IOException {
     Parent parent = FXMLLoader.load(getClass().getResource(Main.GUI_RESOURCE));
     Scene scene = new Scene(parent);

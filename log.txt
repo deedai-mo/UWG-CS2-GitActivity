@@ -1,3 +1,27 @@
+commit 4bc6c58c44a6e1c172eb318a863572110a28d9f6
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 25 23:52:08 2025 -0400
+
+     Test completed
+    
+    Created a Task test and Task Utils Test to test the methods and make sure they are not null or empty
+
+commit 37f7296c16a3199550caba4df8b23cff94170eec
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 25 22:53:05 2025 -0400
+
+     Task class created
+    
+    The new task class has been created with the task name task description and priority
+
+commit 55b7a731df0580ff81a54522443a01b1d53dc8f0
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 25 12:11:47 2025 -0400
+
+     Project 1 restart
+    
+    I am restarting project 1 caue the Junit file has been given
+
 commit 8de0a99376aea6e672a921d203f6b34d680d963d
 Author: deedai-mo <ellamogaha@gmail.com>
 Date:   Wed Sep 24 04:52:29 2025 -0400
