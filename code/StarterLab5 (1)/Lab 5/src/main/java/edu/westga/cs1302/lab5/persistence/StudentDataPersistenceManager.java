@@ -17,6 +17,7 @@ import edu.westga.cs1302.lab5.model.Student;
 public class StudentDataPersistenceManager {
 	
 	public static final String FILE_LOCATION = "data.txt";
+	private static final String SEPARATOR = "'";
 	
 	/** Save the students!
 	 * 
@@ -33,8 +34,8 @@ public class StudentDataPersistenceManager {
 		}
 		try (FileWriter writer = new FileWriter(StudentDataPersistenceManager.FILE_LOCATION)) {
 			for (Student currStudent : students) {
-				writer.write(currStudent.getName() + System.lineSeparator());
-				writer.write(currStudent.getGrade() + System.lineSeparator());
+				String csvLine = currStudent.getName()+ SEPARATOR + currStudent.getGrade() + System.lineSeparator();
+				writer.write(csvLine);
 			}
 		}
 	}
@@ -52,19 +53,28 @@ public class StudentDataPersistenceManager {
 		ArrayList<Student> students = new ArrayList<Student>();
 		File inputFile = new File(StudentDataPersistenceManager.FILE_LOCATION);
 		
+		int lineNumber = 0;
 		try (Scanner reader = new Scanner(inputFile)) {
 			while (reader.hasNextLine()) {
-				String name = reader.nextLine();
-				if (!reader.hasNextLine()) {
-					throw new IOException("missing grade for " + name);
+                lineNumber++;
+				String line = reader.nextLine();
+				String[] parts = line.split(SEPARATOR);
+				if (parts.length != 2) {
+					throw new IOException("File format error on line " + lineNumber + ": Expected format is 'name,grade'.");
 				}
-				int grade = Integer.parseInt(reader.nextLine());
+                
+                String name = parts[0].trim();
+                int grade;
+
+				try {
+					grade = Integer.parseInt(parts[1].trim());
+				} catch (NumberFormatException error) {
+					throw new IOException("File format error on line " + lineNumber + ": Grade value was not formatted as an integer.");
+				}
 				students.add(new Student(name, grade));
 			}
-		} catch (NumberFormatException error) {
-			throw new IOException("grade value was not formatted as an integer (" + error.getMessage() + ")");
 		} catch (IllegalArgumentException error) {
-			throw new IOException(error.getMessage());
+			throw new IOException("Data validation error on line " + lineNumber + ": " + error.getMessage());
 		}
 		
 		return students.toArray(new Student[0]);
