@@ -78,6 +78,10 @@ public class MainWindow {
     
     @FXML
     void sortTasks(ActionEvent event) {
+    	Comparator<Task> selectedComparator = this.order.getValue();
+    	if (selectedComparator != null) {
+    		this.tasks.getItems().sort(selectedComparator);
+    	}
 
     }
 

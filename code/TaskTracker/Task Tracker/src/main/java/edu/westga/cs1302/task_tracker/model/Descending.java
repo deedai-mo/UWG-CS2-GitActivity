@@ -2,6 +2,12 @@ package edu.westga.cs1302.task_tracker.model;
 
 import java.util.Comparator;
 
+/**
+ * Compares two Tasks based on priority in descending order (HIGH, MEDIUM, LOW).
+ * Higher priority comes first.
+ * @author CS 1302
+ * @version Fall 2025
+ */
 public class Descending implements Comparator<Task> {
 	private static final String COMPARATOR_NAME = "Descending Priority (HIGH -> LOW)";
 
