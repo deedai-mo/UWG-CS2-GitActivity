@@ -17,7 +17,7 @@ import edu.westga.cs1302.lab5.model.Student;
 public class StudentDataPersistenceManager {
 	
 	public static final String FILE_LOCATION = "data.txt";
-	private static final String SEPARATOR = "'";
+	private static final String SEPARATOR = ",";
 	
 	/** Save the students!
 	 * 
@@ -34,7 +34,7 @@ public class StudentDataPersistenceManager {
 		}
 		try (FileWriter writer = new FileWriter(StudentDataPersistenceManager.FILE_LOCATION)) {
 			for (Student currStudent : students) {
-				String csvLine = currStudent.getName()+ SEPARATOR + currStudent.getGrade() + System.lineSeparator();
+				String csvLine = currStudent.getName() + SEPARATOR + currStudent.getGrade() + System.lineSeparator();
 				writer.write(csvLine);
 			}
 		}
@@ -59,7 +59,9 @@ public class StudentDataPersistenceManager {
                 lineNumber++;
 				String line = reader.nextLine();
 				String[] parts = line.split(SEPARATOR);
+				
 				if (parts.length != 2) {
+					// FIX: Updated message to reflect the correct separator used here
 					throw new IOException("File format error on line " + lineNumber + ": Expected format is 'name,grade'.");
 				}
                 
@@ -78,6 +80,6 @@ public class StudentDataPersistenceManager {
 		}
 		
 		return students.toArray(new Student[0]);
-	}
 	
+   }
 }

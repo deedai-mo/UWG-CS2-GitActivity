@@ -22,6 +22,7 @@ public class GradeCalculator {
 		if (students == null) {
 			throw new IllegalArgumentException("no students provided.");
 		}
+	
 		if (students.size() == 0) {
 			throw new IllegalArgumentException("no students provided.");
 		}

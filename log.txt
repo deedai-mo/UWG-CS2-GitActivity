@@ -1,3 +1,27 @@
+commit 18bf5530f5689620a7974f5e2a61900cee96887b
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 2 02:19:17 2025 -0400
+
+    final update
+    
+    added a update averge method to the code behind and created a perform load method to replace loadStudents
+
+commit 29fec83047af3c7613dce3f23512eff46b910744
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 2 00:03:06 2025 -0400
+
+     Updates made to StudentDataPersistenceManager
+    
+    Added a seprator constant and Update the save data and load student method
+
+commit 37c25940c36f190f881dfbc23a118023faca5dfe
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 1 23:02:28 2025 -0400
+
+    Initial Lab 5
+    
+    This is the Lab 5 stater states
+
 commit 4bc6c58c44a6e1c172eb318a863572110a28d9f6
 Author: deedai-mo <ellamogaha@gmail.com>
 Date:   Thu Sep 25 23:52:08 2025 -0400
