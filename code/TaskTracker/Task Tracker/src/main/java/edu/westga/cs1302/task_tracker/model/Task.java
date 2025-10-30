@@ -5,7 +5,7 @@ package edu.westga.cs1302.task_tracker.model;
  * @author CS 1302
  * @version Fall 2025
  */
-public class Task {
+public class Task implements Comparable<Task> {
 	
 	/** Possible priority options for a Task
 	 * 
@@ -107,5 +107,10 @@ public class Task {
 	@Override
 	public String toString() {
 		return this.name;
+	}
+	
+	@Override
+	public int compareTo(Task other) {
+		return this.priority.compareTo(other.priority);
 	}
 }
