@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="240.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.mvvmsandbox.view.StudentInfoCodeBehind">
+   <children>
+      <Label layoutX="23.0" layoutY="28.0" text="Name:" />
+      <TextField fx:id="nameTextField" layoutX="66.0" layoutY="24.0" promptText="Enter name" />
+      <Label layoutX="22.0" layoutY="63.0" text="Grade:" />
+      <TextField fx:id="gradeTextField" layoutX="66.0" layoutY="59.0" promptText="Enter grade" />
+      <Button layoutX="22.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleUpdateStudent" text="Update Student" />
+      <Label layoutX="23.0" layoutY="128.0" text="Summary info" />
+      <TextArea fx:id="summaryTextField" layoutX="22.0" layoutY="146.0" prefHeight="70.0" prefWidth="198.0" />
+      <Button layoutX="22.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleSimulateModelViewDataChange" text="Simulate ModelView Data Change" />
+   </children>
+</AnchorPane>

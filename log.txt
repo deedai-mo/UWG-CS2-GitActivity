@@ -1,3 +1,11 @@
+commit badff20a5928b5938c774eae6c79e385fffde659
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 15:49:43 2025 -0400
+
+     Added Commit
+    
+    i have added my commit history to my log file
+
 commit 17551bf99a5fb3997395aa54fd5fe3032edadf95
 Author: deedai-mo <ellamogaha@gmail.com>
 Date:   Wed Oct 15 15:46:25 2025 -0400
