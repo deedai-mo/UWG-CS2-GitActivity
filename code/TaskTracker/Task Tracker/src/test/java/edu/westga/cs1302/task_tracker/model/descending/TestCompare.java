@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import edu.westga.cs1302.task_tracker.model.Ascending;
-import edu.westga.cs1302.task_tracker.model.Descending;
+import edu.westga.cs1302.task_tracker.model.PriorityAscending;
+import edu.westga.cs1302.task_tracker.model.PriorityDescending;
 import edu.westga.cs1302.task_tracker.model.Task;
 import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
 
@@ -29,14 +29,14 @@ class TestCompare {
         this.lowPriorityTaskDuplicate = new Task("Do Laundry", "Wash all clothes", TaskPriority.LOW);
     }
 
-    // --- Tests for Ascending Comparator (LOW -> HIGH) ---
+    // --- Tests for PriorityAscending Comparator (LOW -> HIGH) ---
 
     /**
      * Tests that two tasks with the same priority compare as equal (return 0).
      */
     @Test
     public void testAscendingComparatorSamePriority() {
-        Ascending comparator = new Ascending();
+        PriorityAscending comparator = new PriorityAscending();
         // LOW vs LOW should be 0
         assertEquals(0, comparator.compare(this.lowPriorityTask, this.lowPriorityTaskDuplicate), 
             "Tasks with the same priority (LOW) should return 0 in ascending order.");
@@ -50,7 +50,7 @@ class TestCompare {
      */
     @Test
     public void testAscendingComparatorLowVsMedium() {
-        Ascending comparator = new Ascending();
+        PriorityAscending comparator = new PriorityAscending();
         // LOW should be less than MEDIUM (negative result)
         assertTrue(comparator.compare(this.lowPriorityTask, this.mediumPriorityTask) < 0, 
             "LOW priority should come before MEDIUM priority in ascending order.");
@@ -61,7 +61,7 @@ class TestCompare {
      */
     @Test
     public void testAscendingComparatorMediumVsHigh() {
-        Ascending comparator = new Ascending();
+        PriorityAscending comparator = new PriorityAscending();
         // MEDIUM should be less than HIGH (negative result)
         assertTrue(comparator.compare(this.mediumPriorityTask, this.highPriorityTask) < 0, 
             "MEDIUM priority should come before HIGH priority in ascending order.");
@@ -72,7 +72,7 @@ class TestCompare {
      */
     @Test
     public void testAscendingComparatorLowVsHigh() {
-        Ascending comparator = new Ascending();
+        PriorityAscending comparator = new PriorityAscending();
         // LOW should be much less than HIGH (negative result)
         assertTrue(comparator.compare(this.lowPriorityTask, this.highPriorityTask) < 0, 
             "LOW priority should come before HIGH priority in ascending order.");
@@ -83,20 +83,20 @@ class TestCompare {
      */
     @Test
     public void testAscendingComparatorHighVsLow() {
-        Ascending comparator = new Ascending();
+        PriorityAscending comparator = new PriorityAscending();
         // HIGH should be greater than LOW (positive result)
         assertTrue(comparator.compare(this.highPriorityTask, this.lowPriorityTask) > 0, 
             "HIGH priority should come after LOW priority in ascending order.");
     }
 
-    // --- Tests for Descending Comparator (HIGH -> LOW) ---
+    // --- Tests for PriorityDescending Comparator (HIGH -> LOW) ---
 
     /**
      * Tests that two tasks with the same priority compare as equal (return 0).
      */
     @Test
     public void testDescendingComparatorSamePriority() {
-        Descending comparator = new Descending();
+        PriorityDescending comparator = new PriorityDescending();
         // LOW vs LOW should be 0
         assertEquals(0, comparator.compare(this.lowPriorityTask, this.lowPriorityTaskDuplicate), 
             "Tasks with the same priority (LOW) should return 0 in descending order.");

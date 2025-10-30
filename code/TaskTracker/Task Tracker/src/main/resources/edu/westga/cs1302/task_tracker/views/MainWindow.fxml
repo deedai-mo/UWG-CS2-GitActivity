@@ -8,10 +8,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.task_tracker.views.MainWindow">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.task_tracker.views.MainWindow">
    <children>
       <Button layoutX="37.0" layoutY="148.0" mnemonicParsing="false" onAction="#addTask" text="Add Task" />
-      <Label layoutX="89.0" layoutY="21.0" text="Name" />
+      <Label layoutX="86.0" layoutY="21.0" text="Name" />
       <Label layoutX="195.0" layoutY="21.0" text="Description" />
       <Label layoutX="86.0" layoutY="69.0" text="Priority" />
       <ListView fx:id="tasks" layoutX="30.0" layoutY="186.0" onMouseClicked="#selectTask" prefHeight="200.0" prefWidth="200.0" />
@@ -33,5 +33,9 @@
       <Button layoutX="285.0" layoutY="361.0" mnemonicParsing="false" onAction="#updateDescription" text="Update Description" />
       <Label layoutX="37.0" layoutY="394.0" text="Sort Tasks" />
       <ComboBox fx:id="order" layoutX="95.0" layoutY="392.0" onAction="#sortTasks" prefHeight="25.0" prefWidth="128.0" />
+      <Label layoutX="30.0" layoutY="468.0" text="Subtasks" />
+      <ListView fx:id="subTasksListView" layoutX="30.0" layoutY="486.0" onMouseClicked="#displaySelectedSubtask" prefHeight="90.0" prefWidth="200.0" />
+      <TextField fx:id="newSubtaskNameField" layoutX="256.0" layoutY="486.0" prefHeight="25.0" prefWidth="177.0" promptText="New Subtask Name" />
+      <Button fx:id="addSubTaskButton" layoutX="256.0" layoutY="519.0" mnemonicParsing="false" onAction="#addSubTask" prefWidth="177.0" text="Add Subtask" />
    </children>
 </AnchorPane>

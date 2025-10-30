@@ -8,8 +8,8 @@ import java.util.Comparator;
  * @author CS 1302
  * @version Fall 2025
  */
-public class Descending implements Comparator<Task> {
-	private static final String COMPARATOR_NAME = "Descending Priority (HIGH -> LOW)";
+public class PriorityDescending implements Comparator<Task> {
+	private static final String COMPARATOR_NAME = "PriorityDescending Priority (HIGH -> LOW)";
 
     /**
      * Compares its two Task arguments for order.

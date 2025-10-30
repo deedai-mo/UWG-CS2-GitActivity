@@ -1,5 +1,8 @@
 package edu.westga.cs1302.task_tracker.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /** Stores basic information for a Task
  * 
  * @author CS 1302
@@ -49,6 +52,35 @@ public class Task implements Comparable<Task> {
 		this.description = description;
 		this.priority = priority;
 	}
+	/**
+	 * Adds a subtask and upgrades this Task to a ContainerTask.
+	 * * @param subTask the Task to be added as a subtask.
+	 * @return a new ContainerTask object (returned as the base type Task) containing both the original task (this) and the new subtask.
+	 */
+	public Task addTask(Task subTask) { // FIX: Changed return type to Task for proper covariant override
+		if (subTask == null) {
+			throw new IllegalArgumentException("Subtask cannot be null.");
+		}
+		// Create the new ContainerTask with the original task's properties
+		ContainerTask newContainer = new ContainerTask(this.name, this.getDescription(), this.priority);
+		
+		// Add the original task (this) as the first subtask to maintain task history/structure
+		newContainer.addTask(this);
+		
+		// Add the new subtask argument
+		newContainer.addTask(subTask);
+		
+		return newContainer;
+	}
+	
+	/**
+	 * Returns an empty list of Task objects for a base Task that is not a ContainerTask.
+	 * @return an empty list.
+	 */
+	public List<Task> getSubTasks() {
+		return new ArrayList<>(); 
+	}
+	
 	
 	/** Return the name of the task
 	 * 

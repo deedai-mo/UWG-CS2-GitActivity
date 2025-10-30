@@ -39,6 +39,11 @@
 			<version>5.5.1</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>edu.westga.cs1302</groupId>
+			<artifactId>javafx_sample_starter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
     </dependencies>
     <build>
     	<pluginManagement>
