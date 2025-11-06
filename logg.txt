@@ -1,3 +1,169 @@
+commit 78252070ecd020f76802eaa9b9cc44aac6381143
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 30 05:28:26 2025 -0400
+
+     Part 4 complete
+    
+    updated the controller to include the new method mapped to the subtasklistview
+
+commit fe1c691259cdaeffb02c682efe83014833f8a8a9
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 30 04:53:46 2025 -0400
+
+     Part 2 complete
+    
+    updated the mainwindow to include all four sorting options in the combobox
+
+commit f9cb1e409e79a4ac5b06d673fa73c6d4d1fddce7
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 30 04:33:17 2025 -0400
+
+     part 1 complete
+    
+    Conneted UI to Business logic for Re-sorting Tasks
+
+commit fce7d396e106bc4bfd06d753588b27c163237a57
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 30 03:37:25 2025 -0400
+
+     Rename complete
+    
+    I ahve renamed all the neccsary files
+
+commit f5cc2ec2438ddeabfade35af5074253ac9d27d4f
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 30 01:48:59 2025 -0400
+
+     initial commmit
+    
+    This is the initial commit for project 2
+
+commit badff20a5928b5938c774eae6c79e385fffde659
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 15:49:43 2025 -0400
+
+     Added Commit
+    
+    i have added my commit history to my log file
+
+commit 17551bf99a5fb3997395aa54fd5fe3032edadf95
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 15:46:25 2025 -0400
+
+     Check Style
+    
+    I have corrected all CheckStyle problems and added the nesserary specifications
+
+commit 98dfdb16c1f3e6107f4899a534bdd664d4b57d00
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 15:20:08 2025 -0400
+
+     test cases
+    
+    I have created test cases for descening and Ascending classes
+
+commit a2e10617f39fb617a079b4912f38dbda1a1a0c85
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 14:59:32 2025 -0400
+
+     Descending Class
+    
+    I have a descending class that implements the comparator interface and populated the sorttasks method
+
+commit b6252badebe03d4eda50b28c579fa52862ce6729
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 14:50:01 2025 -0400
+
+     Ascending Comparator
+    
+    I have created a comparator class that compares two tasks in ascending order
+
+commit e3e2113358b9af88d64581c94bb6545a49ec9444
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 12:59:46 2025 -0400
+
+     Initial commit
+    
+    This is the lab 6 Task tracker initial code commit
+
+commit 18bf5530f5689620a7974f5e2a61900cee96887b
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 2 02:19:17 2025 -0400
+
+    final update
+    
+    added a update averge method to the code behind and created a perform load method to replace loadStudents
+
+commit 29fec83047af3c7613dce3f23512eff46b910744
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 2 00:03:06 2025 -0400
+
+     Updates made to StudentDataPersistenceManager
+    
+    Added a seprator constant and Update the save data and load student method
+
+commit 37c25940c36f190f881dfbc23a118023faca5dfe
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 1 23:02:28 2025 -0400
+
+    Initial Lab 5
+    
+    This is the Lab 5 stater states
+
+commit 4bc6c58c44a6e1c172eb318a863572110a28d9f6
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 25 23:52:08 2025 -0400
+
+     Test completed
+    
+    Created a Task test and Task Utils Test to test the methods and make sure they are not null or empty
+
+commit 37f7296c16a3199550caba4df8b23cff94170eec
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 25 22:53:05 2025 -0400
+
+     Task class created
+    
+    The new task class has been created with the task name task description and priority
+
+commit 55b7a731df0580ff81a54522443a01b1d53dc8f0
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 25 12:11:47 2025 -0400
+
+     Project 1 restart
+    
+    I am restarting project 1 caue the Junit file has been given
+
+commit 8de0a99376aea6e672a921d203f6b34d680d963d
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 04:52:29 2025 -0400
+
+     part 5 complete
+    
+    I have added the utils mehtod and updated the count button and count label
+
+commit 7d28cb83911282377ad28831a4946ee29a35f9f5
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 04:11:26 2025 -0400
+
+     Part 2 completed
+    
+    I have have added the read only text area and text field
+
+commit 6acefb6fec0b1d930af093de9a3ebf2d6a7ad625
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 03:53:25 2025 -0400
+
+     Part 1 complete
+    
+    I have populated the initialization method
+
+commit 30ae3545787ed43025f55e2cc1549529a5bb80b8
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 02:51:37 2025 -0400
+
+     Error found
+
 commit 4be28b8a7ce78e2cc01f05c09ba7c45b01013755
 Author: deedai-mo <ellamogaha@gmail.com>
 Date:   Wed Sep 24 02:05:21 2025 -0400
