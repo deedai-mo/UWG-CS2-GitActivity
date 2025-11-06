@@ -31,7 +31,6 @@ public class MainWindow {
     @FXML
     void generatePassword(ActionEvent event) {
     	try {
-			// Delegate the business logic to the ViewModel
 			this.viewModel.generatePassword();
 		} catch (NumberFormatException numberError) {
 			Alert alert = new Alert(AlertType.ERROR);
