@@ -7,6 +7,7 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.ObservableList;
 
 /** Manages utilizing the model and makes properties available to bind the UI elements.
  * 
@@ -23,6 +24,7 @@ public class ViewModel {
 	private StringProperty errorText;
 	
     private PasswordGenerator generator;
+    private ObservableList<String> passwordList;
 	
 	/** Initialize the properties for the viewmodel
 	 */
@@ -37,6 +39,24 @@ public class ViewModel {
 
         Random randomNumberGenerator = new Random();
         this.generator = new PasswordGenerator(randomNumberGenerator.nextLong());
+	}
+	/** Sets up the change listener for validating the minimum length input.
+	 * Uses a regular expression to ensure the input is only digits.
+	 */
+	
+	private void setupMinimumLengthValidation() {
+		this.minimumLength.addListener((observable, oldValue, newValue) -> {
+			if (!newValue.matches("\\d+")) {
+				this.errorText.setValue("Invalid Minimum Length: must contain only digits.");
+			} else {
+				this.errorText.setValue("");
+			}
+			if (!this.errorText.getValue().isEmpty()) {
+				
+			} else if (Integer.parseInt(newValue) < 1) {
+				this.errorText.setValue("Invalid Minimum Length: must be at least 1.");
+			}
+		});
 	}
 
 	/** Return the minimum length property
@@ -96,6 +116,9 @@ public class ViewModel {
 	public void generatePassword() {
     	int minimumLength = -1;
     	this.password.setValue("");
+    	if (!this.errorText.getValue().isEmpty()) {
+			return;
+		}
     	
     	try {
     		minimumLength = Integer.parseInt(this.minimumLength.getValue());
@@ -117,7 +140,8 @@ public class ViewModel {
     	
     	String password = this.generator.generatePassword();
     	
-    	this.password.setValue(password);
+    	this.passwordList.add(password); 
+		this.errorText.setValue("");
     }
 
 }
