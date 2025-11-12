@@ -106,6 +106,15 @@ public class ViewModel {
 	public StringProperty getErrorText() {
 		return this.errorText;
 	}
+	
+	/** Return the list of generated passwords.
+	 * 
+	 * @return the list of generated passwords
+	 */
+	
+	public ObservableList<String> getPasswordList() {
+		return this.passwordList;
+	}
 
 	/** Generates a password using the minimum length, require digit, require lower case, and require upper case property values.
 	 * 
