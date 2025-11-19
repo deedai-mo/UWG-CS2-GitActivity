@@ -1,16 +1,19 @@
 package edu.westga.cs1302.password_generator.viewmodel;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import edu.westga.cs1302.password_generator.model.PasswordGenerator;
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 
 /** Manages utilizing the model and makes properties available to bind the UI elements.
+ * 
  * @author CS 1302
  * @version Fall 2025
  */
@@ -20,11 +23,10 @@ public class ViewModel {
 	private BooleanProperty requireLowercase;
 	private BooleanProperty requireUppercase;
 	
-	private StringProperty password;
+	private ListProperty<String> passwordHistory;
 	private StringProperty errorText;
 	
     private PasswordGenerator generator;
-    private ObservableList<String> passwordList;
 	
 	/** Initialize the properties for the viewmodel
 	 */
@@ -34,28 +36,11 @@ public class ViewModel {
 		this.requireLowercase = new SimpleBooleanProperty(false);
 		this.requireUppercase = new SimpleBooleanProperty(false);
 		
-		this.password = new SimpleStringProperty("");
-		this.passwordList = FXCollections.observableArrayList();
+		this.passwordHistory = new SimpleListProperty<String>(FXCollections.observableArrayList(new ArrayList<String>()));
 		this.errorText = new SimpleStringProperty("");
 
         Random randomNumberGenerator = new Random();
         this.generator = new PasswordGenerator(randomNumberGenerator.nextLong());
-	}
-	/** Sets up the change listener for validating the minimum length input.
-	 * Uses a regular expression to ensure the input is only digits.
-	 */
-	
-	private void setupMinimumLengthValidation() {
-		this.minimumLength.addListener((observable, oldValue, newValue) -> {
-			if (!newValue.matches("\\d+")) {
-				this.errorText.setValue("Invalid Minimum Length: must contain only digits.");
-			} else {
-				this.errorText.setValue("");
-			}
-			if (Integer.parseInt(newValue) < 1) {
-				this.errorText.setValue("Invalid Minimum Length: must be at least 1.");
-			}
-		});
 	}
 
 	/** Return the minimum length property
@@ -94,8 +79,8 @@ public class ViewModel {
 	 * 
 	 * @return the password property
 	 */
-	public StringProperty getPassword() {
-		return this.password;
+	public ListProperty<String> getPasswordHistory() {
+		return this.passwordHistory;
 	}
 
 	/** Return the error text property
@@ -104,15 +89,6 @@ public class ViewModel {
 	 */
 	public StringProperty getErrorText() {
 		return this.errorText;
-	}
-	
-	/** Return the list of generated passwords.
-	 * 
-	 * @return the list of generated passwords
-	 */
-	
-	public ObservableList<String> getPasswordList() {
-		return this.passwordList;
 	}
 
 	/** Generates a password using the minimum length, require digit, require lower case, and require upper case property values.
@@ -123,10 +99,6 @@ public class ViewModel {
 	 */
 	public void generatePassword() {
     	int minimumLength = -1;
-    	this.password.setValue("");
-    	if (!this.errorText.getValue().isEmpty()) {
-			return;
-		}
     	
     	try {
     		minimumLength = Integer.parseInt(this.minimumLength.getValue());
@@ -148,8 +120,7 @@ public class ViewModel {
     	
     	String password = this.generator.generatePassword();
     	
-    	this.passwordList.add(password); 
-		this.errorText.setValue("");
+    	this.passwordHistory.add(password);
     }
 
 }

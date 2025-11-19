@@ -1,3 +1,27 @@
+commit e8389083db00be4404528c836c8e53c97b32ae51
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Nov 12 18:26:02 2025 -0500
+
+     Updated View
+    
+    Replaced Text Area with ListView and binded the items to passwordList
+
+commit f08feb8362ec7899241c15ee091e26bbdf81465b
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Nov 12 18:19:29 2025 -0500
+
+     ViewModel Updated
+    
+    add an observable list to store generated password. also added a change listener to the minimumLength property to validate input and updated the generatePassword method
+
+commit b948bd4d1ce0c7b2d01953a6b56dcb5cc89fa40b
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Nov 12 17:42:31 2025 -0500
+
+     lab 8
+    
+    this is lab 8 begginner stater file
+
 commit 3196b0168731371e3b80bd9f3f481afa90c8cf55
 Author: deedai-mo <ellamogaha@gmail.com>
 Date:   Thu Nov 6 01:19:34 2025 -0500

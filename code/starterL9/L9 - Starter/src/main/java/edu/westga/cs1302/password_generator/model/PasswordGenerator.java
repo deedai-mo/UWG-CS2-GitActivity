@@ -1,4 +1,4 @@
- package edu.westga.cs1302.password_generator.model;
+package edu.westga.cs1302.password_generator.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
