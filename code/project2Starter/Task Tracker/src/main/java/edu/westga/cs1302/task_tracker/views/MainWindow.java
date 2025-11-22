@@ -6,6 +6,7 @@ import edu.westga.cs1302.task_tracker.model.Ascending;
 import edu.westga.cs1302.task_tracker.model.Descending;
 import edu.westga.cs1302.task_tracker.model.Task;
 import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
+import edu.westga.cs1302.task_tracker.model.TaskTracker;
 import edu.westga.cs1302.task_tracker.model.TaskUtility;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,6 +35,7 @@ public class MainWindow {
     @FXML private TextField selectedPriority;
     @FXML private ListView<Task> tasks;
     @FXML private ComboBox<Comparator<Task>> order;
+    @FXML private TaskTracker tracker;
 
     /** Add a new task with the provided information to the listview.
      * 
@@ -47,13 +49,31 @@ public class MainWindow {
      */
     @FXML 
     void addTask(ActionEvent event) {
-    	try {
-    		this.tasks.getItems().add(new Task(this.name.getText(), this.description.getText(), this.priority.getValue()));
-    	} catch (IllegalArgumentException error) {
-    		Alert alert = new Alert(AlertType.ERROR);
-    		alert.setContentText(error.getMessage());
-    		alert.showAndWait();
-    	}
+//    	try {
+//    		this.tasks.getItems().add(new Task(this.name.getText(), this.description.getText(), this.priority.getValue()));
+//    	} catch (IllegalArgumentException error) {
+//    		Alert alert = new Alert(AlertType.ERROR);
+//    		alert.setContentText(error.getMessage());
+//    		alert.showAndWait();
+//         }
+    	
+    	String taskName = this.name.getText();
+		String taskDescription = this.description.getText();
+		TaskPriority taskPriority = this.priority.getValue();
+		if (taskName != null && !taskName.trim().isEmpty()) {
+			try {
+				Task newTask = new Task(taskName.trim(), taskDescription.trim(), taskPriority);
+				this.tracker.addTask(newTask);
+				this.sortTasks(null);
+				
+			} catch (IllegalArgumentException error) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setContentText(error.getMessage());
+        		alert.showAndWait();
+				
+			}
+		}
+    	
     }
 
     /** Display the priority and description of the task selected in the listview.
