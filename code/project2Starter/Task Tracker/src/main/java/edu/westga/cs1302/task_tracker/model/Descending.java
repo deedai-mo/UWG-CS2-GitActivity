@@ -51,6 +51,6 @@ public class Descending implements Comparator<Task> {
 	 */
 	@Override
 	public String toString() {
-		return "Descending";
+		return "Descending Priority";
 	}
 }

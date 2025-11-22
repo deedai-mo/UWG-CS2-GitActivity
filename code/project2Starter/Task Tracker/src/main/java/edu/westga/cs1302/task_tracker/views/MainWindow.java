@@ -1,6 +1,7 @@
  package edu.westga.cs1302.task_tracker.views;
 
 import java.util.Comparator;
+import java.util.List;
 
 import edu.westga.cs1302.task_tracker.model.Ascending;
 import edu.westga.cs1302.task_tracker.model.Descending;
@@ -38,7 +39,6 @@ public class MainWindow {
     @FXML private ListView<Task> tasks;
     @FXML private ComboBox<Comparator<Task>> order;
      private TaskTracker tracker;
-    private ObservableList<Task> observabletasks;
 
     /** Add a new task with the provided information to the listview.
      * 
@@ -51,15 +51,7 @@ public class MainWindow {
      * @param event we will not use this parameter, only here due to JavaFX Library requirement
      */
     @FXML 
-    void addTask(ActionEvent event) {
-//    	try {
-//    		this.tasks.getItems().add(new Task(this.name.getText(), this.description.getText(), this.priority.getValue()));
-//    	} catch (IllegalArgumentException error) {
-//    		Alert alert = new Alert(AlertType.ERROR);
-//    		alert.setContentText(error.getMessage());
-//    		alert.showAndWait();
-//         }
-    	
+    void addTask(ActionEvent event) {    	
     	String taskName = this.name.getText();
 		String taskDescription = this.description.getText();
 		TaskPriority taskPriority = this.priority.getValue();
@@ -163,7 +155,11 @@ public class MainWindow {
 
 		if (selectedComparator != null) {
 			this.tracker.sortTasks(selectedComparator);
-			this.observabletasks.setAll(this.tracker.getTasks());
+			this.tasks.getItems().clear();
+			List<Task> sortedTasks = this.tracker.getTasks();
+			for (Task task : sortedTasks) {
+	            this.tasks.getItems().add(task);
+	        }
 		}
     }
 
@@ -176,21 +172,16 @@ public class MainWindow {
     @FXML
     public void initialize() {
     	this.tracker = new TaskTracker();
-    	this.priority.getItems().setAll(Task.TaskPriority.values());
-    	this.priority.getSelectionModel().selectFirst();
+    	this.priority.getItems().add(Task.TaskPriority.HIGH);
+        this.priority.getItems().add(Task.TaskPriority.MEDIUM);
+        this.priority.getItems().add(Task.TaskPriority.LOW);
+        this.priority.getSelectionModel().selectFirst();
     	this.order.getItems().add(new Ascending());
     	this.order.getItems().add(new Descending());
     	this.order.getSelectionModel().selectFirst();
-    	this.observabletasks = FXCollections.observableArrayList(this.tracker.getTasks());
-        this.tasks.setItems(this.observabletasks);
         this.highCount.setText("0");
         this.mediumCount.setText("0");
         this.lowCount.setText("0");
     	
-//    	this.priority.getItems().addAll(TaskPriority.HIGH, TaskPriority.MEDIUM, TaskPriority.LOW);
-//    	this.priority.setValue(this.priority.getItems().get(0));
-//    	this.order.getItems().add(new Ascending());
-//    	this.order.getItems().add(new Descending());
-//    	this.priority.setValue(this.priority.getItems().get(0));
     }
 }
