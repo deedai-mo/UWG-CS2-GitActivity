@@ -118,8 +118,18 @@ public class MainWindow {
     @FXML
     void updateDescription(ActionEvent event) {
     	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
-    	if (selectedTask != null) {
-    		selectedTask.setDescription(this.selectedDescription.getText());
+    	String newDescription = this.selectedDescription.getText();
+    	if (selectedTask != null && newDescription != null) {
+    		try {
+    			selectedTask.setDescription(newDescription.trim());
+    			this.sortTasks(null);
+    		} catch (IllegalArgumentException error) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setContentText(error.getMessage());
+        		alert.showAndWait();
+				
+			}
+    		
     	}
     }
 
