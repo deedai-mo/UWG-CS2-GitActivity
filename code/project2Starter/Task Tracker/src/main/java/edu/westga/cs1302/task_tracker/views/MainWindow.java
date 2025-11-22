@@ -19,8 +19,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
+import edu.westga.cs1302.task_tracker.model.AscendingByName;
+import edu.westga.cs1302.task_tracker.model.DescendingByName;
+
 
 /** Controller class for MainWindow of the Task Tracker system.
  * 
@@ -178,6 +180,8 @@ public class MainWindow {
         this.priority.getSelectionModel().selectFirst();
     	this.order.getItems().add(new Ascending());
     	this.order.getItems().add(new Descending());
+    	this.order.getItems().add(new AscendingByName());
+    	this.order.getItems().add(new DescendingByName());
     	this.order.getSelectionModel().selectFirst();
         this.highCount.setText("0");
         this.mediumCount.setText("0");
