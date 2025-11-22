@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import edu.westga.cs1302.password_generator.model.PasswordGenerator;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -27,6 +28,7 @@ public class ViewModel {
 	private StringProperty errorText;
 	
     private PasswordGenerator generator;
+    private BooleanProperty isInputValid;
 	
 	/** Initialize the properties for the viewmodel
 	 */
@@ -38,6 +40,21 @@ public class ViewModel {
 		
 		this.passwordHistory = new SimpleListProperty<String>(FXCollections.observableArrayList(new ArrayList<String>()));
 		this.errorText = new SimpleStringProperty("");
+		this.isInputValid = new SimpleBooleanProperty(true);
+		this.isInputValid.bind(
+	            Bindings.createBooleanBinding(() -> {
+	                String text = this.minimumLength.get();
+	                if (text == null || !text.matches("\\d+")) {
+	                    return false;
+	                }
+	                try {
+	                    int length = Integer.parseInt(text);
+	                    return length > 0;
+	                } catch (NumberFormatException e) {
+	                    return false;
+	                }
+	            }, this.minimumLength)
+	        );
 
         Random randomNumberGenerator = new Random();
         this.generator = new PasswordGenerator(randomNumberGenerator.nextLong());
@@ -121,6 +138,14 @@ public class ViewModel {
     	String password = this.generator.generatePassword();
     	
     	this.passwordHistory.add(password);
+    }
+	/** Return the input valid property
+	 * 
+	 * @return the input valid property
+	 */
+	
+	public BooleanProperty getIsInputValid() {
+        return this.isInputValid;
     }
 
 }
