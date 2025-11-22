@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.task_tracker.views.MainWindow">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="714.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.task_tracker.views.MainWindow">
    <children>
       <Button layoutX="37.0" layoutY="148.0" mnemonicParsing="false" onAction="#addTask" text="Add Task" />
       <Label layoutX="89.0" layoutY="21.0" text="Name" />
@@ -33,5 +33,8 @@
       <Button layoutX="285.0" layoutY="361.0" mnemonicParsing="false" onAction="#updateDescription" text="Update Description" />
       <Label layoutX="37.0" layoutY="394.0" text="Sort Tasks" />
       <ComboBox fx:id="order" layoutX="95.0" layoutY="392.0" onAction="#sortTasks" prefHeight="25.0" prefWidth="128.0" />
+      <Button fx:id="addSubTasksButton" layoutX="563.0" layoutY="349.0" mnemonicParsing="false" text="Add Subtask" />
+      <ListView fx:id="subTaskListView" layoutX="446.0" layoutY="82.0" prefHeight="200.0" prefWidth="315.0" />
+      <Label layoutX="454.0" layoutY="58.0" text="Subtasks" />
    </children>
 </AnchorPane>

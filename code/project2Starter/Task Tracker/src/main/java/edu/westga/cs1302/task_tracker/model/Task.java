@@ -1,5 +1,8 @@
 package edu.westga.cs1302.task_tracker.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /** Stores basic information for a Task
  * 
  * @author CS 1302
@@ -38,6 +41,7 @@ public class Task {
 	private String description;
 	private final String name;
 	private final TaskPriority priority;
+	private final List<Task> subtasks;
 	
 	/** Create a new Task with the provided information.
 	 * 
@@ -65,6 +69,7 @@ public class Task {
 		this.name = name;
 		this.description = description;
 		this.priority = priority;
+		this.subtasks = new ArrayList<Task>();
 	}
 	
 	/** Return the name of the task
@@ -113,6 +118,33 @@ public class Task {
 		}
 		this.description = description;
 	}
+	/**
+	 * Returns an unmodifiable list of the subtasks.
+	 *
+	 * @precondition none
+	 * @postcondition none
+	 *
+	 * @return the list of subtasks
+	 */
+	
+	public List<Task> getSubtasks() {
+	    return new ArrayList<Task>(this.subtasks);
+	}
+	
+    /**
+     * Adds a subtask to this task.
+     * @precondition subtask != null
+     * @postcondition subtask is added to the subtasks list
+     *
+     * @param subtask the subtask to add
+     */
+	
+    public void addSubtask(Task subtask) {
+        if (subtask == null) {
+            throw new IllegalArgumentException("subtask must not be null");
+        }
+        this.subtasks.add(subtask);
+    }
 
 	/** Returns the name of the task to represent the task as a String
 	 * 

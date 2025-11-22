@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -40,6 +41,7 @@ public class MainWindow {
     @FXML private TextField selectedPriority;
     @FXML private ListView<Task> tasks;
     @FXML private ComboBox<Comparator<Task>> order;
+    @FXML private Button addSubTasksButton;
      private TaskTracker tracker;
 
     /** Add a new task with the provided information to the listview.
