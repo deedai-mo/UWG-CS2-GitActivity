@@ -18,6 +18,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /** Controller class for MainWindow of the Task Tracker system.
  * 
@@ -35,7 +37,8 @@ public class MainWindow {
     @FXML private TextField selectedPriority;
     @FXML private ListView<Task> tasks;
     @FXML private ComboBox<Comparator<Task>> order;
-    @FXML private TaskTracker tracker;
+     private TaskTracker tracker;
+    private ObservableList<Task> observabletasks;
 
     /** Add a new task with the provided information to the listview.
      * 
@@ -156,9 +159,12 @@ public class MainWindow {
      */
     @FXML
     void sortTasks(ActionEvent event) {
-    	if (this.order.getValue() != null) {
-    		this.tasks.getItems().sort(this.order.getValue());
-    	}
+    	Comparator<Task> selectedComparator = this.order.getSelectionModel().getSelectedItem();
+
+		if (selectedComparator != null) {
+			this.tracker.sortTasks(selectedComparator);
+			this.observabletasks.setAll(this.tracker.getTasks());
+		}
     }
 
     /** Perform any needed initialization of UI components and underlying objects.
@@ -169,10 +175,22 @@ public class MainWindow {
      */
     @FXML
     public void initialize() {
-    	this.priority.getItems().addAll(TaskPriority.HIGH, TaskPriority.MEDIUM, TaskPriority.LOW);
-    	this.priority.setValue(this.priority.getItems().get(0));
+    	this.tracker = new TaskTracker();
+    	this.priority.getItems().setAll(Task.TaskPriority.values());
+    	this.priority.getSelectionModel().selectFirst();
     	this.order.getItems().add(new Ascending());
     	this.order.getItems().add(new Descending());
-    	this.priority.setValue(this.priority.getItems().get(0));
+    	this.order.getSelectionModel().selectFirst();
+    	this.observabletasks = FXCollections.observableArrayList(this.tracker.getTasks());
+        this.tasks.setItems(this.observabletasks);
+        this.highCount.setText("0");
+        this.mediumCount.setText("0");
+        this.lowCount.setText("0");
+    	
+//    	this.priority.getItems().addAll(TaskPriority.HIGH, TaskPriority.MEDIUM, TaskPriority.LOW);
+//    	this.priority.setValue(this.priority.getItems().get(0));
+//    	this.order.getItems().add(new Ascending());
+//    	this.order.getItems().add(new Descending());
+//    	this.priority.setValue(this.priority.getItems().get(0));
     }
 }
