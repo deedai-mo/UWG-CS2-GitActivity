@@ -2,6 +2,7 @@ package edu.westga.cs1302.task_tracker.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import edu.westga.cs1302.task_tracker.model.*;
 
 /** Stores basic information for a Task
  * 
@@ -41,11 +42,11 @@ public class Task {
 	private String description;
 	private final String name;
 	private final TaskPriority priority;
-	private final List<Task> subtasks;
+	//private final List<Task> subtasks;
 	
 	/** Create a new Task with the provided information.
 	 * 
-	 * @preconditon name != null && !name.isEmpty() &&
+	 * @precondition name != null && !name.isEmpty() &&
 	 * 				description != null &&
 	 * 				priority != null
 	 * 
@@ -69,7 +70,7 @@ public class Task {
 		this.name = name;
 		this.description = description;
 		this.priority = priority;
-		this.subtasks = new ArrayList<Task>();
+		
 	}
 	
 	/** Return the name of the task
@@ -128,7 +129,7 @@ public class Task {
 	 */
 	
 	public List<Task> getSubtasks() {
-	    return new ArrayList<Task>(this.subtasks);
+	    return new ArrayList<Task>();
 	}
 	
     /**
@@ -139,13 +140,33 @@ public class Task {
      * @param subtask the subtask to add
      */
 	
-    public void addSubtask(Task subtask) {
-        if (subtask == null) {
-            throw new IllegalArgumentException("subtask must not be null");
-        }
-        this.subtasks.add(subtask);
-    }
-
+//    public void addSubtask(Task subtask) {
+//        if (subtask == null) {
+//            throw new IllegalArgumentException("subtask must not be null");
+//        }
+//        this.subtasks.add(subtask);
+//    }
+	
+	public Task addTask(Task task) {
+		if (task == null) {
+			throw new IllegalArgumentException("task must not be null");
+		}
+		return (Task) new ContainerTask(this.name, this.description, this.priority, task);
+	}
+	/**
+	 * Returns an empty list, as a base Task cannot contain subtasks.
+	 * 
+	 *
+	 * @precondition none
+	 * @postcondition none
+	 *
+	 * @return an empty list of Task objects.
+	 */
+  
+	public List<Task> getSubTasks() {
+		return new ArrayList<Task>();
+	}
+	
 	/** Returns the name of the task to represent the task as a String
 	 * 
 	 * @precondition none
