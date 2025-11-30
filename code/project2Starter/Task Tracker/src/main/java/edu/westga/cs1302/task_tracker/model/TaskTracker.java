@@ -65,7 +65,7 @@ public class TaskTracker {
 	 * @return the list of tasks
 	 */
 	public List<Task> getTasks() {
-		return Collections.unmodifiableList(this.tasks);
+		return new ArrayList<Task>(this.tasks);
 	}
 
 	/**
@@ -78,9 +78,9 @@ public class TaskTracker {
 	 */
 	public void sortTasks(Comparator<Task> comparator) {
 		if (comparator == null) {
-			throw new IllegalArgumentException("comparator must not be null");
+			return;
 		}
-		Collections.sort(this.tasks, comparator);
+		TaskUtility.sort(this.tasks, comparator);
 	}
 }
 	

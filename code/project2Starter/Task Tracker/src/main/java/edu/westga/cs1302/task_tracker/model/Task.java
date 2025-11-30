@@ -2,7 +2,6 @@ package edu.westga.cs1302.task_tracker.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import edu.westga.cs1302.task_tracker.model.*;
 
 /** Stores basic information for a Task
  * 
@@ -72,9 +71,32 @@ public class Task {
 		this.priority = priority;
 		
 	}
+	/**
+	 * Adds a subtask to this task. Since this is a simple Task (Leaf), 
+	 * it converts itself into a ContainerTask (Composite) and returns the new composite object.
+	 *
+	 * @param task the subtask to add
+	 * @return the new ContainerTask composite object
+	 */
+	
+	public Task addTask(Task task) {
+		if (task == null) {
+			throw new IllegalArgumentException("Task must not be null");
+		}
+		return new ContainerTask(this.name, this.description, this.priority, task);
+	}
+	
+	/**
+	 * Removes a subtask. For a Leaf Task, this always returns false.
+	 *
+	 * @param task the task to remove
+	 * @return always false
+	 */
+	public boolean removeTask(Task task) {
+	    return false;
+	}
 	
 	/** Return the name of the task
-	 * 
 	 * @precondition none
 	 * @postcondition none
 	 * 
@@ -119,53 +141,23 @@ public class Task {
 		}
 		this.description = description;
 	}
-	/**
-	 * Returns an unmodifiable list of the subtasks.
-	 *
-	 * @precondition none
-	 * @postcondition none
-	 *
-	 * @return the list of subtasks
-	 */
 	
-	public List<Task> getSubtasks() {
-	    return new ArrayList<Task>();
-	}
 	
-    /**
-     * Adds a subtask to this task.
-     * @precondition subtask != null
-     * @postcondition subtask is added to the subtasks list
-     *
-     * @param subtask the subtask to add
-     */
+	//    /**
+	//     * Adds a subtask to this task.
+	//     * @precondition subtask != null
+	//     * @postcondition subtask is added to the subtasks list
+	//     *
+	//     * @param subtask the subtask to add
+	//     */
 	
-//    public void addSubtask(Task subtask) {
-//        if (subtask == null) {
-//            throw new IllegalArgumentException("subtask must not be null");
-//        }
-//        this.subtasks.add(subtask);
-//    }
+	//    public void addSubtask(Task subtask) {
+	//        if (subtask == null) {
+	//            throw new IllegalArgumentException("subtask must not be null");
+	//        }
+	//        this.subtasks.add(subtask);
+	//     }
 	
-	public Task addTask(Task task) {
-		if (task == null) {
-			throw new IllegalArgumentException("task must not be null");
-		}
-		return (Task) new ContainerTask(this.name, this.description, this.priority, task);
-	}
-	/**
-	 * Returns an empty list, as a base Task cannot contain subtasks.
-	 * 
-	 *
-	 * @precondition none
-	 * @postcondition none
-	 *
-	 * @return an empty list of Task objects.
-	 */
-  
-	public List<Task> getSubTasks() {
-		return new ArrayList<Task>();
-	}
 	
 	/** Returns the name of the task to represent the task as a String
 	 * 
@@ -177,5 +169,15 @@ public class Task {
 	@Override
 	public String toString() {
 		return this.name;
+	}
+	/**
+	 * Returns a defensive copy of the list of the subtasks.
+	 * The caller can modify this returned list without affecting the internal state.
+	 *
+	 * @return a new list containing the subtasks
+	 */
+	
+	public List<Task> getSubTasks() {
+		return new ArrayList<Task>();
 	}
 }

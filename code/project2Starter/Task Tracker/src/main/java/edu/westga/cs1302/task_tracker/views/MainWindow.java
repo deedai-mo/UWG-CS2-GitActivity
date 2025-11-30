@@ -11,8 +11,6 @@ import edu.westga.cs1302.task_tracker.model.TaskTracker;
 import edu.westga.cs1302.task_tracker.model.TaskUtility;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -24,9 +22,8 @@ import javafx.scene.input.MouseEvent;
 import edu.westga.cs1302.task_tracker.model.AscendingByName;
 import edu.westga.cs1302.task_tracker.model.DescendingByName;
 
-
-/** Controller class for MainWindow of the Task Tracker system.
- * 
+/** 
+ * Controller class for MainWindow of the Task Tracker system.
  * @author CS 1302
  * @version Fall 2025
  */
@@ -42,6 +39,7 @@ public class MainWindow {
     @FXML private ListView<Task> tasks;
     @FXML private ComboBox<Comparator<Task>> order;
     @FXML private Button addSubTasksButton;
+    @FXML private ListView<Task> subtasks;
      private TaskTracker tracker;
 
     /** Add a new task with the provided information to the listview.
@@ -64,16 +62,65 @@ public class MainWindow {
 				Task newTask = new Task(taskName.trim(), taskDescription.trim(), taskPriority);
 				this.tracker.addTask(newTask);
 				this.sortTasks(null);
+				this.countPriorities(null);
+				
+				 this.name.clear();
+	             this.description.clear();
+	             this.priority.getSelectionModel().selectFirst();
 				
 			} catch (IllegalArgumentException error) {
-				Alert alert = new Alert(AlertType.ERROR);
-				alert.setContentText(error.getMessage());
-        		alert.showAndWait();
+				System.err.println("Error adding task: " + error.getMessage());
 				
 			}
 		}
     	
     }
+    
+    /** Implements the logic to add a subtask to the currently selected task.
+     * Handles the conversion of a simple Task to a ContainerTask if necessary using the Composite pattern.
+     *  @param event the ActionEvent
+     */
+    @FXML
+    
+    void addSubtask(ActionEvent event) {
+    	
+        Task parentTask = this.tasks.getSelectionModel().getSelectedItem();
+
+        if (parentTask == null) {
+            System.err.println("Error: Must select a main task to add a subtask.");
+            return;
+        }
+
+        String subName = this.name.getText();
+        String subDescription = this.description.getText();
+        TaskPriority subPriority = this.priority.getSelectionModel().getSelectedItem();
+
+        if (subName != null && !subName.trim().isEmpty()) {
+            try {
+                Task newSubtask = new Task(subName.trim(), subDescription.trim(), subPriority);
+                
+                Task returnedTask = parentTask.addTask(newSubtask);
+
+                if (returnedTask != parentTask) {
+                  
+                    this.tracker.removeTask(parentTask);
+                    this.tracker.addTask(returnedTask);
+               
+                    this.sortTasks(null); 
+                    this.tasks.getSelectionModel().select(returnedTask);
+                } 
+              
+                this.refreshSubtasksListView(returnedTask);
+                this.name.clear();
+                this.description.clear();
+                this.priority.getSelectionModel().selectFirst();
+
+            } catch (IllegalArgumentException error) {
+                System.err.println("Error adding subtask: " + error.getMessage());
+            }
+        }
+    }
+
 
     /** Display the priority and description of the task selected in the listview.
      * 
@@ -85,11 +132,18 @@ public class MainWindow {
      */
     @FXML
     void selectTask(MouseEvent event) {
-    	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
-    	if (selectedTask != null) {
-    		this.selectedPriority.setText(selectedTask.getPriority().toString());
-    		this.selectedDescription.setText(selectedTask.getDescription());
-    	}
+Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+        
+        this.selectedPriority.setText("");
+        this.selectedDescription.clear();
+        this.subtasks.getItems().clear();
+
+        if (selectedTask != null) {
+            this.selectedPriority.setText(selectedTask.getPriority().toString());
+            this.selectedDescription.setText(selectedTask.getDescription());
+           
+            this.refreshSubtasksListView(selectedTask);
+        }
     }
 
     /** Remove the currently selected task.
@@ -101,10 +155,16 @@ public class MainWindow {
      */
     @FXML
     void removeTask(ActionEvent event) {
-    	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
-    	if (selectedTask != null) {
-    		this.tasks.getItems().remove(selectedTask);
-    	}
+        Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+        if (selectedTask != null) {
+            this.tracker.removeTask(selectedTask); 
+            this.sortTasks(null); 
+            this.countPriorities(null);
+            
+            this.selectedPriority.setText("");
+            this.selectedDescription.clear();
+            this.subtasks.getItems().clear();
+        }
     }
 
     /** Update the description of the selected task.
@@ -116,20 +176,16 @@ public class MainWindow {
      */
     @FXML
     void updateDescription(ActionEvent event) {
-    	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
-    	String newDescription = this.selectedDescription.getText();
-    	if (selectedTask != null && newDescription != null) {
-    		try {
-    			selectedTask.setDescription(newDescription.trim());
-    			this.sortTasks(null);
-    		} catch (IllegalArgumentException error) {
-				Alert alert = new Alert(AlertType.ERROR);
-				alert.setContentText(error.getMessage());
-        		alert.showAndWait();
-				
-			}
-    		
-    	}
+    	  Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+          String newDescription = this.selectedDescription.getText();
+          if (selectedTask != null && newDescription != null) {
+              try {
+                  selectedTask.setDescription(newDescription.trim());
+                  this.sortTasks(null);
+              } catch (IllegalArgumentException error) {
+                  System.err.println("Error updating description: " + error.getMessage());
+              }
+          }
     }
 
     /** Display the count of tasks for each priority.
@@ -149,7 +205,7 @@ public class MainWindow {
     /** Sort tasks based on the selected ordering.
      * 
      * @precondition none
-     * @postcondition tasks in the listview are sorted based on the provided ordering.
+     * @postcondition tasks in the list view are sorted based on the provided ordering.
      * 
      * @param event we will not use this parameter, only here due to JavaFX Library requirement
      */
@@ -166,6 +222,7 @@ public class MainWindow {
 	        }
 		}
     }
+    
 
     /** Perform any needed initialization of UI components and underlying objects.
      * 
@@ -189,5 +246,18 @@ public class MainWindow {
         this.mediumCount.setText("0");
         this.lowCount.setText("0");
     	
+    }
+    /**
+     * Helper method to refresh the subtasks ListView for a given task.
+     * @param task the task whose subtasks should be displayed
+     */
+    
+    private void refreshSubtasksListView(Task task) {
+        this.subtasks.getItems().clear();
+        if (task != null) {
+            for (Task subtask : task.getSubTasks()) { 
+                this.subtasks.getItems().add(subtask);
+            }
+        }
     }
 }
