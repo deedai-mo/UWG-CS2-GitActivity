@@ -107,14 +107,23 @@ public class MainWindow {
                     this.tracker.addTask(returnedTask);
                
                     this.sortTasks(null); 
-                    this.tasks.getSelectionModel().select(returnedTask);
+                    int newIndex = -1;
+                    List<Task> currentTasks = this.tasks.getItems();
+                    for (int i = 0; i < currentTasks.size(); i++) {
+                        if (currentTasks.get(i) == returnedTask) {
+                            newIndex = i;
+                            break;
+                        }
+                    }
+                    if (newIndex != -1) {
+                        this.tasks.getSelectionModel().select(newIndex);
+                    }
                 } 
-              
+                
                 this.refreshSubtasksListView(returnedTask);
                 this.name.clear();
                 this.description.clear();
                 this.priority.getSelectionModel().selectFirst();
-
             } catch (IllegalArgumentException error) {
                 System.err.println("Error adding subtask: " + error.getMessage());
             }
@@ -132,17 +141,40 @@ public class MainWindow {
      */
     @FXML
     void selectTask(MouseEvent event) {
-Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
-        
-        this.selectedPriority.setText("");
-        this.selectedDescription.clear();
-        this.subtasks.getItems().clear();
+    	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
 
-        if (selectedTask != null) {
-            this.selectedPriority.setText(selectedTask.getPriority().toString());
-            this.selectedDescription.setText(selectedTask.getDescription());
-           
-            this.refreshSubtasksListView(selectedTask);
+    	this.selectedPriority.setText("");
+    	this.selectedDescription.clear();
+    	this.subtasks.getItems().clear();
+
+    	if (selectedTask != null) {
+    		this.selectedPriority.setText(selectedTask.getPriority().toString());
+    		this.selectedDescription.setText(selectedTask.getDescription());
+
+    		this.refreshSubtasksListView(selectedTask);
+    	}
+    }
+    /**
+     * Implements the functionality to display a subtask's details when selected.
+     * This simulates displaying the details in a popup window.
+     * * @param event we will not use this parameter, only here due to JavaFX Library requirement
+     */
+    @FXML
+    void selectSubtask(MouseEvent event) { // <-- NEW METHOD
+        Task selectedSubtask = this.subtasks.getSelectionModel().getSelectedItem();
+
+        if (selectedSubtask != null) {
+            String details = String.format(
+                "--- Subtask Details ---\n" +
+                "Name: %s\n" +
+                "Priority: %s\n" +
+                "Description:\n%s\n" +
+                "-----------------------\n",
+                selectedSubtask.getName(),
+                selectedSubtask.getPriority().toString(),
+                selectedSubtask.getDescription()
+            );
+            System.out.println(details); 
         }
     }
 
@@ -253,11 +285,13 @@ Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
      */
     
     private void refreshSubtasksListView(Task task) {
-        this.subtasks.getItems().clear();
-        if (task != null) {
-            for (Task subtask : task.getSubTasks()) { 
-                this.subtasks.getItems().add(subtask);
-            }
-        }
-    }
+    	 this.subtasks.getItems().clear();
+         if (task != null) {
+             List<Task> currentSubtasks = task.getSubTasks(); 
+             for (int i = 0; i < currentSubtasks.size(); i++) {
+                 Task subtask = currentSubtasks.get(i);
+                 this.subtasks.getItems().add(subtask);
+             }
+         }
+     }
 }

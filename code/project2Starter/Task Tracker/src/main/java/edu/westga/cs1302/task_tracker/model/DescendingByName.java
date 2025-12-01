@@ -10,31 +10,32 @@ import java.util.Comparator;
  */
 
 public class DescendingByName implements Comparator<Task> {
-	/**
-	 * Returns a value indicating ordering of the two tasks based on Descending Name.
-	 *
-	 * @precondition o1 != null && o2 != null
-	 * @postcondition none
-	 *
-	 * @param o1 the first task to compare
-	 * @param o2 the second task to compare
-	 *
-	 * @return a negative integer, zero, or a positive integer as the
-	 * first task name is less than, equal to, or greater than the second task name.
-	 */
-	@Override
-	public int compare(Task o1, Task o2) {
-		if (o1 == null || o2 == null) {
-			throw new IllegalArgumentException("Tasks must not be null");
-		}
-		return o2.getName().compareTo(o1.getName());
-	}
 
+    /**
+     * Compares two Task objects based on their name in descending order.
+     *
+     * @precondition task1 != null && task2 != null
+     * @postcondition none
+     *
+     * @param task1 the first task to be compared
+     * @param task2 the second task to be compared
+     * @return a negative integer, zero, or a positive integer as the 
+     * first task's name is greater than, equal to, or less than 
+     * the second task's name.
+     */
+    @Override
+    public int compare(Task task1, Task task2) {
+        if (task1 == null || task2 == null) {
+            throw new IllegalArgumentException("Tasks being compared must not be null.");
+        }
+        return task2.getName().compareTo(task1.getName());
+    }
 	/**
 	 * Returns the name of the comparator to represent it as a String
 	 *
 	 * @return "Descending Name"
 	 */
+    
 	@Override
 	public String toString() {
 		return "Descending Name";
