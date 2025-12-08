@@ -55,14 +55,9 @@ class TestContainerTask {
 	
 	@Test
 	void testRemoveTaskSuccessful() {
-		// Arrange: Two subtasks (subtask1 from setup, subtask2 added here)
 		this.container.addTask(this.subtask2);
 		assertEquals(2, this.container.getSubTasks().size());
-		
-		// Act
 		boolean removed = this.container.removeTask(this.subtask1);
-		
-		// Assert
 		assertTrue(removed);
 		assertEquals(1, this.container.getSubTasks().size());
 		assertFalse(this.container.getSubTasks().contains(this.subtask1));
@@ -72,30 +67,21 @@ class TestContainerTask {
 	@Test
 	void testRemoveNonExistentTask() {
 		Task thirdTask = new Task("NonExistent", "D3", TaskPriority.LOW);
-		
-		// Should return false and list size should remain 1
 		assertFalse(this.container.removeTask(thirdTask));
 		assertEquals(1, this.container.getSubTasks().size());
 	}
 	
-	// --- Get Subtasks Tests ---
 	
 	@Test
 	void testGetSubTasksReturnsDefensiveCopy() {
-		// Arrange: Get the list
 		int originalSize = this.container.getSubTasks().size();
 		List<Task> subList = this.container.getSubTasks();
-		
-		// Act: Modify the returned list
 		subList.add(this.subtask2);
-		
-		// Assert: The internal list size should not have changed
+	
 		assertEquals(originalSize, this.container.getSubTasks().size());
-		// The returned list should have changed
 		assertEquals(originalSize + 1, subList.size());
 	}
 	
-	// --- ToString Test ---
 	
 	@Test
 	void testToStringIncludesIndicator() {

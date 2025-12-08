@@ -2,7 +2,6 @@ package edu.westga.cs1302.task_tracker.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
 
 /**
  * Represents a Task that contains a list of subtasks. Inherits from Task.

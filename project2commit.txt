@@ -1,0 +1,505 @@
+commit 09dd830509b3fbf67d606161dde6cc72cf7f3ecc
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Mon Dec 1 00:52:51 2025 -0500
+
+     Test class compelte
+    
+    created all necessary test classes and they passed
+
+commit 368d72d6d96ddd5b83bc2484327e3d07817d8383
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Sat Nov 29 23:06:10 2025 -0500
+
+     4A compelete
+    
+    Updated the MainWIndow
+
+commit 069346fcba1cabf9f72a1776effc19db1d4c8c18
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Sat Nov 29 18:28:56 2025 -0500
+
+     3B compelte
+    
+    created the contianer class and modified the Task class
+
+commit 0560551362ecb8a13ec3a56e0932cff361d18ff5
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Fri Nov 21 23:51:17 2025 -0500
+
+     Subtasks 3A
+    
+    Added the add subtaks button and listview and updated the task class
+
+commit 976bd8c1aae2d27c6abb89ebe9a9e7f270f6ddc8
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Fri Nov 21 23:29:21 2025 -0500
+
+     Part 2 complete
+    
+    Updated the initialize method to add the name comparators
+
+commit 81f10462ca599b60223fb6637f55d4e41cd8f935
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Fri Nov 21 23:16:50 2025 -0500
+
+     Ascend by name class created
+    
+    This class sorts task by name A to Z
+
+commit f936cc906eaa4e2b109d0bec62c244d10a7d1353
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Fri Nov 21 22:39:03 2025 -0500
+
+     initialize method updated
+    
+    updated the initialize method
+
+commit 9676b0f4b31a41d23884fbfad31a8687f3eeaaf5
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Fri Nov 21 22:00:58 2025 -0500
+
+     updateDecription Updated
+    
+    Updted updateDescription method to re sort when description has been updated
+
+commit 1d69d2364715ae02d0b597265c17abcc7373c003
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Fri Nov 21 21:53:56 2025 -0500
+
+     addTask updated
+    
+    updated addTask method to resort tasks after adding
+
+commit 603d7638dfefc8c221865246381dc075f89766ef
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Fri Nov 21 20:40:08 2025 -0500
+
+     Task tracker class
+    
+    Created a Task tracker class for holding tasks
+
+commit 283599c987c72d08db47b82c460dc1b3d2474980
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Fri Nov 21 19:51:59 2025 -0500
+
+     Project 2 redo
+    
+    inital project 2 package
+
+commit d5ebeb31c85f765ae08062c6c692fcd7d1c20f25
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Nov 19 21:52:50 2025 -0500
+
+     Menu added
+    
+    Added a save, close and about menu item
+
+commit 25507e462936f67dbae93df159134838a99cf3d5
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Nov 19 13:16:26 2025 -0500
+
+     Lab 9 intial package
+    
+    this is Lab 9 initial commit
+
+commit e8389083db00be4404528c836c8e53c97b32ae51
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Nov 12 18:26:02 2025 -0500
+
+     Updated View
+    
+    Replaced Text Area with ListView and binded the items to passwordList
+
+commit f08feb8362ec7899241c15ee091e26bbdf81465b
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Nov 12 18:19:29 2025 -0500
+
+     ViewModel Updated
+    
+    add an observable list to store generated password. also added a change listener to the minimumLength property to validate input and updated the generatePassword method
+
+commit b948bd4d1ce0c7b2d01953a6b56dcb5cc89fa40b
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Nov 12 17:42:31 2025 -0500
+
+     lab 8
+    
+    this is lab 8 begginner stater file
+
+commit 3196b0168731371e3b80bd9f3f481afa90c8cf55
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Nov 6 01:19:34 2025 -0500
+
+     Test classes
+    
+    Created a test class for the viewmodel
+
+commit 9e499f3aaff9cb7ce0353f9beb7880e15a991c79
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Nov 6 01:10:12 2025 -0500
+
+     view class
+    
+    View class has been updated
+
+commit 36aa0797bbd195ddd7e409ff5e0c567607cf4c17
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Nov 6 01:01:17 2025 -0500
+
+     ViewModel class created
+    
+    I have created the viewmodel class and creted all the neccesssary properties
+
+commit 9d87d14e594004a3797fed32aa02d7eea99a06cb
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Nov 5 22:58:59 2025 -0500
+
+     Stater 7 initial file
+    
+    this is the lab 7 stater file
+
+commit 78252070ecd020f76802eaa9b9cc44aac6381143
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 30 05:28:26 2025 -0400
+
+     Part 4 complete
+    
+    updated the controller to include the new method mapped to the subtasklistview
+
+commit fe1c691259cdaeffb02c682efe83014833f8a8a9
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 30 04:53:46 2025 -0400
+
+     Part 2 complete
+    
+    updated the mainwindow to include all four sorting options in the combobox
+
+commit f9cb1e409e79a4ac5b06d673fa73c6d4d1fddce7
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 30 04:33:17 2025 -0400
+
+     part 1 complete
+    
+    Conneted UI to Business logic for Re-sorting Tasks
+
+commit fce7d396e106bc4bfd06d753588b27c163237a57
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 30 03:37:25 2025 -0400
+
+     Rename complete
+    
+    I ahve renamed all the neccsary files
+
+commit f5cc2ec2438ddeabfade35af5074253ac9d27d4f
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 30 01:48:59 2025 -0400
+
+     initial commmit
+    
+    This is the initial commit for project 2
+
+commit badff20a5928b5938c774eae6c79e385fffde659
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 15:49:43 2025 -0400
+
+     Added Commit
+    
+    i have added my commit history to my log file
+
+commit 17551bf99a5fb3997395aa54fd5fe3032edadf95
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 15:46:25 2025 -0400
+
+     Check Style
+    
+    I have corrected all CheckStyle problems and added the nesserary specifications
+
+commit 98dfdb16c1f3e6107f4899a534bdd664d4b57d00
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 15:20:08 2025 -0400
+
+     test cases
+    
+    I have created test cases for descening and Ascending classes
+
+commit a2e10617f39fb617a079b4912f38dbda1a1a0c85
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 14:59:32 2025 -0400
+
+     Descending Class
+    
+    I have a descending class that implements the comparator interface and populated the sorttasks method
+
+commit b6252badebe03d4eda50b28c579fa52862ce6729
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 14:50:01 2025 -0400
+
+     Ascending Comparator
+    
+    I have created a comparator class that compares two tasks in ascending order
+
+commit e3e2113358b9af88d64581c94bb6545a49ec9444
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 15 12:59:46 2025 -0400
+
+     Initial commit
+    
+    This is the lab 6 Task tracker initial code commit
+
+commit 18bf5530f5689620a7974f5e2a61900cee96887b
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 2 02:19:17 2025 -0400
+
+    final update
+    
+    added a update averge method to the code behind and created a perform load method to replace loadStudents
+
+commit 29fec83047af3c7613dce3f23512eff46b910744
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Oct 2 00:03:06 2025 -0400
+
+     Updates made to StudentDataPersistenceManager
+    
+    Added a seprator constant and Update the save data and load student method
+
+commit 37c25940c36f190f881dfbc23a118023faca5dfe
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Oct 1 23:02:28 2025 -0400
+
+    Initial Lab 5
+    
+    This is the Lab 5 stater states
+
+commit 4bc6c58c44a6e1c172eb318a863572110a28d9f6
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 25 23:52:08 2025 -0400
+
+     Test completed
+    
+    Created a Task test and Task Utils Test to test the methods and make sure they are not null or empty
+
+commit 37f7296c16a3199550caba4df8b23cff94170eec
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 25 22:53:05 2025 -0400
+
+     Task class created
+    
+    The new task class has been created with the task name task description and priority
+
+commit 55b7a731df0580ff81a54522443a01b1d53dc8f0
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 25 12:11:47 2025 -0400
+
+     Project 1 restart
+    
+    I am restarting project 1 caue the Junit file has been given
+
+commit 8de0a99376aea6e672a921d203f6b34d680d963d
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 04:52:29 2025 -0400
+
+     part 5 complete
+    
+    I have added the utils mehtod and updated the count button and count label
+
+commit 7d28cb83911282377ad28831a4946ee29a35f9f5
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 04:11:26 2025 -0400
+
+     Part 2 completed
+    
+    I have have added the read only text area and text field
+
+commit 6acefb6fec0b1d930af093de9a3ebf2d6a7ad625
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 03:53:25 2025 -0400
+
+     Part 1 complete
+    
+    I have populated the initialization method
+
+commit 30ae3545787ed43025f55e2cc1549529a5bb80b8
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 02:51:37 2025 -0400
+
+     Error found
+
+commit 4be28b8a7ce78e2cc01f05c09ba7c45b01013755
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 02:05:21 2025 -0400
+
+     UI for Adding Tasks
+    
+    UI layout has been created and also the code behind
+
+commit 74b237eb860a27b9e967c944bcac78eac8e6baf8
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 01:30:21 2025 -0400
+
+    Task class created
+    
+    task class containg the name, description, and task priority has been created
+
+commit f0f270806a0dd3d3c960d781c8a549964e28cd92
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 24 01:06:06 2025 -0400
+
+    project 1 update
+    
+    my project keeps deleting
+
+commit 78eb54d408511c378226cb402c3df8db5669c082
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Tue Sep 23 23:28:17 2025 -0400
+
+     Task class created
+
+commit aff52affdd64393914e94901637a2003ee73567a
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Tue Sep 23 13:28:25 2025 -0400
+
+     project 1 created
+    
+    Project one created but refuses to commit to branch
+
+commit 0523a42875a4bb1f95f66fd2b69f1ae48e4a9b8e
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Mon Sep 22 22:10:16 2025 -0400
+
+     Stater project
+    
+    this the project scratch
+
+commit f899cfb0e3e4975a2df4e053c19f9c76b8969747
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Mon Sep 22 19:06:35 2025 -0400
+
+    BillCalculator class created
+    
+    this class has been created which calculates the subtotal tax and tip from the Array of Items
+
+commit 970094e95fac5dd206f8c200022d44c07d824336
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Mon Sep 22 15:59:35 2025 -0400
+
+    Inital Lab 4
+    
+    this is the inital lab 4 file before any updates have been made
+
+commit b09597db2ed1ef0dd8dcc694ed8418e6f2a33206
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Sun Sep 7 20:36:14 2025 -0400
+
+     LAB 3 completed
+    
+    I have added the test cases, dont the add item methos in my controller class,and drafted my fxml file
+
+commit 34ae5a7be152ce9c587af2cafdbc044259e17aae
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 4 12:38:28 2025 -0400
+
+     GUI layout created
+    
+    I have added the text field, text area and lables and i have assigned their fx id's
+
+commit 5dffeba73cabbc938135c714b154eaf2df97cf6a
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 4 10:46:18 2025 -0400
+
+     Lab 3 initial form
+    
+    this is the blank updated form of lab3
+
+commit a9ee2f288b91c15647218c8c44003ec5018eb4b7
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 4 10:35:04 2025 -0400
+
+     bill class zip
+
+commit bb0687bf1a1b2d6fd14394a28587129453733bc2
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Sep 4 10:15:01 2025 -0400
+
+     Lab 3 stater file made
+    
+    I have currently added the lab 3 javafx file to my repo
+
+commit d65701b1200819f2c2a9fda05c594f1ea2478e5e
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 3 13:26:58 2025 -0400
+
+     commit text file has been added
+    
+    the text containing my commit git log has been added to my submission file
+
+commit 6fe6b1abd9d1cec62fa4326cfb84ecfb147ebfea
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Wed Sep 3 13:21:42 2025 -0400
+
+     all test have been created
+    
+    the test cases for bill class, billview class and bill item class have been created and pass
+
+commit 39dc61198bcfc185ca04f5210fc70a6a61914b2d
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Tue Sep 2 13:02:25 2025 -0400
+
+     new files from old repo file
+    
+    this is the exception file from class that is moved from old repo file
+
+commit 2f9c9389413e51cce1a20bba73d8fe522f41d515
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:51:05 2025 -0400
+
+     txt file added
+
+commit 68b3932ab48814826cea099b41d1cc31d7d2e478
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:42:02 2025 -0400
+
+     Lab 1 completed
+    Description: all packages created and model and view classes work
+
+commit 45e151d98032be7f04e138aed8c54d2f9f76a37e
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:28:36 2025 -0400
+
+     Adding Lab 1 inital commit'
+    redoing lab 1 cause i did not link it properly the first time
+
+commit 7c9305bcd1fcf82f13e08cf0da1e5e2b8065e70c
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:24:10 2025 -0400
+
+    Lab 1 added to code directory
+
+commit 7e8413caec52592a903ea9faa942ebf833fa3d30
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:20:33 2025 -0400
+
+    Adding starter for Lab 2
+    
+    Added starter project for lab 2 in the code directory.
+
+commit 1ee242020cf98ae022965e9630ee506bfac646fc
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:07:10 2025 -0400
+
+    lab 1
+    
+    lab 1 initial commit
+
+commit 5ae5fb76d17ca1f4c2aa425889384303f157ed00
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Thu Aug 28 12:06:15 2025 -0400
+
+    Lab 1
+    
+    lab 1 initial commit
+
+commit b3f4789f354dba95ca638b36c86a18f22525c7a6
+Author: deedai-mo <ellamogaha@gmail.com>
+Date:   Tue Aug 19 10:04:58 2025 -0400
+
+    Initial commit

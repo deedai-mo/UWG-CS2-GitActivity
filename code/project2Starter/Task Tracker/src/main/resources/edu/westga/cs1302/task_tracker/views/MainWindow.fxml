@@ -27,12 +27,12 @@
       <Label layoutX="265.0" layoutY="434.0" text="High: " />
       <Label layoutX="330.0" layoutY="434.0" text="Medium: " />
       <Label layoutX="418.0" layoutY="434.0" text="Low: " />
-      <Label fx:id="highCount" layoutX="196.0" layoutY="402.0" />
-      <Label fx:id="mediumCount" layoutX="310.0" layoutY="402.0" />
-      <Label fx:id="lowCount" layoutX="393.0" layoutY="404.0" />
+      <Label fx:id="highCount" layoutX="275.0" layoutY="455.0" prefHeight="17.0" prefWidth="12.0" />
+      <Label fx:id="mediumCount" layoutX="336.0" layoutY="455.0" prefHeight="17.0" prefWidth="18.0" />
+      <Label fx:id="lowCount" layoutX="414.0" layoutY="455.0" prefHeight="17.0" prefWidth="38.0" />
       <Button layoutX="285.0" layoutY="361.0" mnemonicParsing="false" onAction="#updateDescription" text="Update Description" />
       <Label layoutX="37.0" layoutY="394.0" text="Sort Tasks" />
-      <ComboBox fx:id="order" layoutX="95.0" layoutY="392.0" onAction="#sortTasks" prefHeight="25.0" prefWidth="128.0" />
+      <ComboBox fx:id="order" layoutX="103.0" layoutY="398.0" onAction="#sortTasks" prefHeight="25.0" prefWidth="128.0" />
       <Button fx:id="addSubTasksButton" layoutX="563.0" layoutY="349.0" mnemonicParsing="false" onAction="#addSubtask" text="Add Subtask" />
       <ListView fx:id="subtasks" layoutX="446.0" layoutY="82.0" prefHeight="200.0" prefWidth="315.0" />
       <Label layoutX="454.0" layoutY="58.0" text="Subtasks" />
